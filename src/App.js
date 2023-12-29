@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Faq from "./component/Faq.jsx";
+import Footer from "./component/Footer.jsx";
+import Header from "./component/Header";
+import Section1 from "./component/sections/Section1.jsx";
+import Section2 from "./component/sections/Section2.jsx";
+import Section3 from "./component/sections/Section3.jsx";
+import Section4 from "./component/sections/Section4.jsx";
+import Bottom from "./component/Bottom.jsx";
+import Secondary from "./component/sections/Secondary.jsx";
+
+
+export const isMobile = window.innerWidth <= 768;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Section1 />
+      <Secondary />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Faq />
+      <Footer />
+      <Bottom />
     </div>
   );
 }
