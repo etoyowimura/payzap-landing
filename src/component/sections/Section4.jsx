@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import smallbg from '../../assets/sec4-smallimg.png'
-import bgright from '../../assets/sec4-seconbg.png'
-import icon1 from '../../assets/frst-icon-card.png'
-import icon2 from '../../assets/scnd-icon-card.png'
-import icon3 from '../../assets/thrd-icon-card.png'
+import smallbg from '../../assets/sec4-smallimg.svg'
+import icon1 from '../../assets/first-card-image.svg'
+import icon2 from '../../assets/scnd-card-image.svg'
+import icon3 from '../../assets/thrd-card-image.svg'
 import image1 from '../../assets/first-img-card.png'
 import image2 from '../../assets/sec-img-card.png'
 import image3 from '../../assets/thrd-img-card.png'
@@ -59,10 +58,10 @@ const Section4 = () => {
     };
 
     return (
-        <div className='sec4'>
+        <div className='sec4' id='section4'>
             <div className="sec4-main">
                 <div className="sec4-main-left">
-                    <img src={smallbg} style={{ marginBottom: 30 }} alt="" />
+                    <img onDragStart={(e) => e.preventDefault()} src={smallbg} style={{ marginBottom: 30 }} alt="" />
                     <div className="sec4-main-left_text">
                         <h1 className="sec4-main-left_text__title"><span>Your Home</span> in your pocket</h1>
                         <p className="sec4-main-left_text__subtitle">With Payzap, making payments is as easy as a single click. Save your payment details securely within the app and initiate transactions easy whenever you need to.</p>

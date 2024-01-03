@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import smallbg from '../../assets/sec3-smallbg.png'
+import smallbg from '../../assets/sec3-smallbg.svg'
 import image1 from '../../assets/first-card-image.png'
 import image2 from '../../assets/second-card-image.png'
 import image3 from '../../assets/third-card-image.png'
@@ -34,10 +34,10 @@ const Section3 = () => {
 
     return (
         
-        <div className='sec3'>
+        <div className='sec3' id='section3'>
             <div className="sec3-main">
                 <div className="sec3-main-left">
-                    <img src={smallbg} alt="" />
+                    <img onDragStart={(e) => e.preventDefault()} src={smallbg} alt="" />
                     <div className="sec3-main-left_text">
                         <h1 className="sec3-main-left_text__title"><span>Keep track</span> of
                             your Payments</h1>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import close from '../assets/close-btn.png'
-import logo from '../assets/logo-mobile.png'
+import logo from '../assets/logo-mobile.svg'
+import { isMobile } from '../App';
 const LoginModal = ({ isOpen, onClose }) => {
     const [username, setUsername] = useState('');
     // const [password, setPassword] = useState('');  
@@ -20,10 +21,14 @@ const LoginModal = ({ isOpen, onClose }) => {
     return (
         <div className={`modal ${isOpen ? 'open' : ''}`}>
             <div className="modal-content">
-                <div className='d-flex jcsb' style={{width: '90%', margin: 'auto', marginTop: '10px'}}>
-                    <img style={{width: 'auto', height: 'auto'}} src={logo} alt="" />
-                    <span className="close" onClick={onClose}><img src={close} alt="" /></span>
-                </div>
+                {isMobile === true ? (
+                    <div className='d-flex jcsb' style={{ width: '90%', margin: 'auto', marginTop: '10px' }}>
+                        <img style={{ width: 'auto', height: 'auto' }} src={logo} alt="" />
+                        <span style={{cursor: 'pointer'}} className="close" onClick={onClose}><img src={close} alt="" /></span>
+                    </div>
+                ) : (
+                    <span style={{position: 'relative', right: '-90%', cursor: "pointer"}} onClick={onClose}><img src={close} alt="" /></span>
+                )}
                 <div className="modal-content-text">
                     <h1 className="modal-content-text_title">Join the Waitlist</h1>
                     <p className="modal-content-text_sub">Be the first to know when we launch. Enter your email to join our waitlist.</p>

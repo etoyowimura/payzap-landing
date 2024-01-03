@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import mainbg from '../../assets/sec2-mainbg.png'
-import sec2bg from '../../assets/section2-bg.png'
-import icon1 from '../../assets/secIcon1.png'
-import icon2 from '../../assets/icon2.png'
-import icon3 from '../../assets/icon3.png'
-import icon4 from '../../assets/icon4.png'
-import icon5 from '../../assets/icon5.png'
-import icon6 from '../../assets/icon6.png'
-import icon7 from '../../assets/icon7.png'
-import icon8 from '../../assets/icon8.png'
-import icon9 from '../../assets/icon9.png'
+import sec2bg from '../../assets/section2-bg.svg'
+import icon1 from '../../assets/secIcon1.svg'
+import icon2 from '../../assets/icon2.svg'
+import icon3 from '../../assets/icon3.svg'
+import icon4 from '../../assets/icon4.svg'
+import icon5 from '../../assets/icon5.svg'
+import icon6 from '../../assets/icon6.svg'
+import icon7 from '../../assets/icon7.svg'
+import icon8 from '../../assets/icon8.svg'
+import icon9 from '../../assets/icon9.svg'
 import Card from '../card/Card';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -87,10 +86,10 @@ const Section2 = () => {
 
     return (
         
-        <div className='sec2'>
+        <div className='sec2' id='section2'>
             <div className="sec2-main">
                 <div className="sec2-main-left">
-                    <img style={{ marginBottom: 30 }} src={sec2bg} alt="" />
+                    <img onDragStart={(e) => e.preventDefault()} style={{ marginBottom: 30 }} src={sec2bg} alt="" />
                     <div className="sec2-main-left_text">
                         <h1 className="sec2-main-left_text__title"><span>Pay</span> for utilities
                             with ease</h1>

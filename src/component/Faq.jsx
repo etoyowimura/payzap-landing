@@ -6,7 +6,7 @@ const Faq = () => {
     const data = [
         {
             key: 1,
-            isOpen: true,
+            isOpen: false,  
             question: 'What is Payzap?',
             answer: 'PayZap is a mobile payment app designed to simplify daily transactions and utility payments, offering a convenient platform to manage bills and everyday expenses seamlessly.',
         }, {
@@ -59,7 +59,7 @@ const Faq = () => {
         }
     ]
     return (
-        <div className='Faq'>
+        <div className='Faq' id='faq'>
             <h1 className="collapse_title">Frequently asked
                 questions</h1>
             {data.map((items) => {

@@ -3,7 +3,7 @@ import logo from '../assets/logo-mobile.png'
 import close from '../assets/close-btn.png'
 import {Link} from 'react-router-dom'
 
-const MenuButton = ({ isOpen, onClose }) => {
+const MenuButton = ({ isOpen, onClose, scrollToSection }) => {
     return (
         <div className={`menuBtn ${isOpen ? 'open' : ''}`}>
             <div className="menuBtn-content">
@@ -13,16 +13,16 @@ const MenuButton = ({ isOpen, onClose }) => {
                 </div>
                 <ul className="menuBtn-content-menu">
                     <li className="menuBtn-content-menu_li">
-                        <Link>About</Link>
+                        <Link onClick={() => { scrollToSection('section2'); onClose(); }} to='/about'>About</Link>
                     </li>
                     <li className="menuBtn-content-menu_li">
-                        <Link>Monitoring</Link>
+                        <Link onClick={() => { scrollToSection('section3'); onClose(); }} to='/monitor'>Monitoring</Link>
                     </li>
                     <li className="menuBtn-content-menu_li">
-                        <Link>My Home</Link>
+                        <Link onClick={() => { scrollToSection('section4'); onClose(); }} to='/myhome'>My Home</Link>
                     </li>
                     <li className="menuBtn-content-menu_li">
-                        <Link>FAQ</Link>
+                        <Link onClick={() => { scrollToSection('faq'); onClose(); }} to='faq'>FAQ</Link>
                     </li>
                 </ul>
                 <ul className="menuBtn-content-menu2">

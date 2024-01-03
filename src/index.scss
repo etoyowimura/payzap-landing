@@ -98,6 +98,22 @@ html {
   font-style: normal;
 }
 
+@mixin font-big {
+  font-family: "Atyp Display";
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+}
+
+@mixin font-small {
+  font-family: 'Neue Montreal';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+}
+
 .d-flex {
   display: flex;
 }
@@ -127,13 +143,14 @@ input {
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0px;
-  text-align: left;
-
-
 }
 
 input::placeholder {
   color: rgba(226, 230, 230, 1);
+}
+
+button {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 450px) {
@@ -185,7 +202,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 45px;
             letter-spacing: 0em;
-            text-align: left;
             color: rgba(4, 4, 4, 1);
           }
         }
@@ -197,19 +213,13 @@ input::placeholder {
         margin-left: -5%;
         border-top: 1px dashed rgba(226, 230, 230, 1);
         padding-top: 4px;
-        text-align: left;
         padding-bottom: 4px;
 
         &_li {
           margin-left: 10%;
 
           a {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 38px;
-            letter-spacing: 0.01em;
-            text-align: left;
+            @include font-small;
             color: rgba(86, 89, 89, 1);
           }
         }
@@ -238,7 +248,7 @@ input::placeholder {
   .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
@@ -310,12 +320,8 @@ input::placeholder {
 
         &_btn {
           width: 90%;
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 22px;
-          letter-spacing: 0.01em;
-          text-align: left;
           border: none;
           background: rgba(50, 204, 204, 1);
           border-radius: 24px;
@@ -366,9 +372,8 @@ input::placeholder {
   .header {
     display: flex;
     align-items: center;
-    align-self: center;
     justify-content: space-between;
-    margin: 12px 5.33%;
+    padding: 12px 5.33%;
 
     &-menu {
       display: none;
@@ -380,7 +385,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 20px;
       letter-spacing: 0.01em;
-      text-align: left;
       padding: 10px 24px;
       border: none;
       border-radius: 20px;
@@ -398,7 +402,7 @@ input::placeholder {
   }
 
   .sec1 {
-
+    margin-top: 50px;
     background-image: url(./assets/headerbg-mobile.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -419,7 +423,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 36px;
         letter-spacing: -0.02em;
-        text-align: left;
         width: 321px;
 
         span {
@@ -428,12 +431,7 @@ input::placeholder {
       }
 
       &_subtitle {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0em;
-        text-align: left;
+        @include font-small;
         margin-top: 16px;
         margin-bottom: 24px;
         width: 295px;
@@ -445,17 +443,12 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-bottom: 16px;
       }
 
       &_btn {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
+        @include font-small;
         font-weight: 600;
-        line-height: 19px;
-        letter-spacing: 0em;
-        text-align: left;
         border: none;
         border-radius: 26px;
         background: rgba(50, 204, 204, 1);
@@ -501,7 +494,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 32px;
             letter-spacing: -0.02em;
-            text-align: left;
             margin-top: 16px;
             margin-bottom: 24px;
             width: 335px;
@@ -513,23 +505,14 @@ input::placeholder {
 
           &__subtitle {
             width: 335px;
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 22px;
-            letter-spacing: 0em;
-            text-align: left;
+            @include font-small;
             margin-bottom: 32px;
           }
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           color: rgba(4, 4, 4, 1);
           background: rgba(50, 204, 204, 1);
           padding: 16.5px 32px;
@@ -584,7 +567,7 @@ input::placeholder {
     }
 
     &-main {
-      background-image: url(./assets/sec2-mobile-bg.png);
+      background-image: url(./assets/sec2-mobilebg.svg);
       background-repeat: no-repeat;
       background-size: auto;
       background-position: bottom center;
@@ -601,7 +584,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 36px;
             letter-spacing: -0.02em;
-            text-align: left;
             width: 248px;
 
             span {
@@ -615,7 +597,6 @@ input::placeholder {
             font-weight: 400;
             line-height: 20px;
             letter-spacing: 0px;
-            text-align: left;
             width: 334px;
             margin-top: 16px;
             margin-bottom: 32px;
@@ -623,12 +604,8 @@ input::placeholder {
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           color: rgba(4, 4, 4, 1);
           background: rgba(255, 255, 255, 1);
@@ -651,10 +628,6 @@ input::placeholder {
 
     }
   }
-
-  // .slick-list {
-  //   height: 210vh;
-  // }
 
   .card {
     padding: 20px;
@@ -680,7 +653,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.01em;
-      text-align: left;
       width: 172px;
       margin-top: 16px;
       margin-bottom: 12px;
@@ -692,16 +664,22 @@ input::placeholder {
       font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.01em;
-      text-align: left;
       width: 222px;
     }
   }
 
   .sec3 {
-    margin-top: 100px;
+    // margin-top: 100px;
+    padding-top: 100px;
 
     &-main {
       padding-left: 5.3%;
+      background-image: url(./assets/sec3-mobilebg.png);
+      background-size: 50%;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      padding-bottom: 300px;
+      margin-bottom: 60px;
 
       &-left {
 
@@ -715,7 +693,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 36px;
             letter-spacing: -0.02em;
-            text-align: left;
             width: 248px;
 
             span {
@@ -729,7 +706,6 @@ input::placeholder {
             font-weight: 400;
             line-height: 20px;
             letter-spacing: 0px;
-            text-align: left;
             width: 334px;
             margin-top: 16px;
             margin-bottom: 32px;
@@ -737,12 +713,8 @@ input::placeholder {
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           border: none;
           border-radius: 24px;
           background: rgba(50, 204, 204, 1);
@@ -783,7 +755,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 31px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-top: 24px;
         margin-bottom: 12px;
         width: 63%;
@@ -795,7 +766,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
         width: 76.5%;
       }
     }
@@ -835,9 +805,12 @@ input::placeholder {
     &-main {
       background-image: url(./assets/sec4-mobilesecond.png);
       background-repeat: no-repeat;
-      background-position: bottom center;
-      padding-bottom: 340px;
+      background-position: center bottom;
+      padding-bottom: 440px;
+      background-size: 60%;
+      overflow: hidden;
       margin: 0 5.33% 60px;
+
       &-left {
         img {
           margin-top: 60px;
@@ -852,7 +825,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 36px;
             letter-spacing: -0.02em;
-            text-align: left;
             width: 241px;
           }
 
@@ -862,7 +834,6 @@ input::placeholder {
             font-weight: 400;
             line-height: 20px;
             letter-spacing: 0px;
-            text-align: left;
             margin-top: 16px;
             margin-bottom: 32px;
             width: 335px;
@@ -870,12 +841,8 @@ input::placeholder {
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           border: none;
           border-radius: 24px;
           background: rgba(255, 255, 255, 1);
@@ -914,7 +881,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.01em;
-      text-align: left;
       padding-top: 16px;
       padding-bottom: 12px;
       width: 211px;
@@ -926,7 +892,6 @@ input::placeholder {
       font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.01em;
-      text-align: left;
 
       width: 222px;
     }
@@ -943,6 +908,9 @@ input::placeholder {
     border-bottom: 1px dashed rgba(226, 230, 230, 1);
     width: 90%;
     margin: auto;
+    overflow: hidden;
+    transition: max-height 2s;
+    max-height: 80px;
 
     &_title {
       width: 254px;
@@ -951,8 +919,7 @@ input::placeholder {
       font-weight: 600;
       line-height: 32px;
       letter-spacing: -0.02em;
-      text-align: left;
-      margin-left:  5%;
+      margin-left: 5%;
       margin-top: 60px;
       margin-bottom: 40px;
     }
@@ -964,11 +931,10 @@ input::placeholder {
 
       &_questions {
         font-family: 'Atyp Display';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
-        line-height: 26px;
+        line-height: 23px;
         letter-spacing: 0.01em;
-        text-align: left;
       }
 
       button {
@@ -977,16 +943,27 @@ input::placeholder {
       }
     }
 
-    &_answer {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 90%;
-      margin-top: 8px;
+
+    &-answer {
+      padding: 10px;
+      background-color: #fff;
+
+      &_answer {
+        @include font-small;
+        display: none;
+        width: 90%;
+        margin-top: 8px;
+        transition: 1s;
+      }
     }
+  }
+
+  .collapse.open {
+    max-height: 500px;
+  }
+
+  .collapse.open .collapse-answer_answer {
+    display: block;
   }
 
   .footer {
@@ -1041,7 +1018,6 @@ input::placeholder {
           font-weight: 400;
           line-height: 18px;
           letter-spacing: 0.01em;
-          text-align: left;
           text-decoration: none;
           color: rgba(86, 89, 89, 1);
           transition: 1s;
@@ -1155,17 +1131,12 @@ input::placeholder {
           font-weight: 600;
           line-height: 36px;
           letter-spacing: -0.02em;
-          text-align: left;
           margin-top: 64px;
           width: 272px;
         }
 
         &_sub {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 22px;
-          letter-spacing: 0.01em;
+          @include font-small;
           text-align: center;
           width: 352px;
           margin-top: 16px;
@@ -1200,12 +1171,8 @@ input::placeholder {
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 22px;
-          letter-spacing: 0.01em;
-          text-align: left;
           border: none;
           background: rgba(50, 204, 204, 1);
           border-radius: 24px;
@@ -1273,10 +1240,7 @@ input::placeholder {
 
         a {
           text-decoration: none;
-          font-family: 'Neue Montreal';
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 22px;
+          @include font-small;
           color: rgba(4, 4, 4, 1);
         }
       }
@@ -1292,11 +1256,8 @@ input::placeholder {
         transition: 0.3s;
 
         a {
-          font-family: "Neue Montreal";
-          font-weight: 600;
-          font-size: 16px;
+          @include font-small;
           text-decoration: none;
-          line-height: 22px;
           color: rgba(4, 4, 4, 1);
         }
       }
@@ -1308,14 +1269,12 @@ input::placeholder {
   }
 
   .sec1 {
-
     background-image: url(./assets/header-bg.png);
     background-size: 50%;
     background-repeat: no-repeat;
-    margin-bottom: 220px;
     background-position: center right;
-    margin: 0 7%;
-    padding: 100px 0;
+    margin: 100px 7% 100px;
+
     &-left {
 
       &_img {
@@ -1328,7 +1287,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 36px;
         letter-spacing: -0.02em;
-        text-align: left;
         width: 321px;
 
         span {
@@ -1337,12 +1295,7 @@ input::placeholder {
       }
 
       &_subtitle {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0em;
-        text-align: left;
+        @include font-small;
         margin-top: 16px;
         margin-bottom: 24px;
         width: 295px;
@@ -1354,17 +1307,12 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-bottom: 16px;
       }
 
       &_btn {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
+        @include font-small;
         font-weight: 600;
-        line-height: 19px;
-        letter-spacing: 0em;
-        text-align: left;
         border: none;
         border-radius: 26px;
         background: rgba(50, 204, 204, 1);
@@ -1393,6 +1341,7 @@ input::placeholder {
     display: flex;
     background-color: rgba(50, 204, 204, 0.1);
     padding: 0 7%;
+
     &-main {
       padding-top: 100px;
       padding-bottom: 100px;
@@ -1414,7 +1363,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 52px;
             letter-spacing: -0.02em;
-            text-align: left;
             margin-bottom: 32px;
             width: 60%;
 
@@ -1429,18 +1377,13 @@ input::placeholder {
             font-weight: 600;
             line-height: 26px;
             letter-spacing: 0em;
-            text-align: left;
             width: 629px;
           }
         }
 
         &_btn {
-          font-family: "Neue Montreal";
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -1458,7 +1401,8 @@ input::placeholder {
 
   .sec2 {
     background: linear-gradient(180deg, #32CCCC 14.06%, rgba(50, 204, 204, 0) 79.69%);
-    padding: 100px 7% ;
+    padding: 100px 7%;
+
     &-main {
       background-image: url(./assets/sec2-mainbg.png);
       background-repeat: no-repeat;
@@ -1466,15 +1410,11 @@ input::placeholder {
       padding-bottom: 100px;
       margin-bottom: 100px;
       background-size: 50%;
+
       &-left {
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 440px;
 
@@ -1484,12 +1424,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             width: 421px;
             margin-top: 24px;
             margin-bottom: 40px;
@@ -1501,12 +1436,8 @@ input::placeholder {
           border: none;
           border-radius: 26px;
           background: #FFF;
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           transition: 0.4s;
         }
 
@@ -1526,7 +1457,7 @@ input::placeholder {
 
     &-cards {
       display: flex;
-      justify-content: space-between;
+      margin: auto;
     }
   }
 
@@ -1535,7 +1466,7 @@ input::placeholder {
     background: #fff;
     border-radius: 12px;
     width: 90%;
-    margin: 10px;
+    margin: 12px;
     border: 1px dashed rgba(226, 230, 230, 1);
     background-image: url(./assets/card-bg.png);
     background-repeat: no-repeat;
@@ -1551,7 +1482,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.01em;
-      text-align: left;
       width: 172px;
       margin-top: 16px;
       margin-bottom: 12px;
@@ -1563,28 +1493,24 @@ input::placeholder {
       font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.01em;
-      text-align: left;
       width: 222px;
     }
   }
 
-  .sec3 {    
-    margin: 100px 7%;
+  .sec3 {
+    margin: 0 7%;
+    padding: 100px 0;
 
     &-main {
       background-image: url(./assets//sec3-mainbg.png);
       background-repeat: no-repeat;
       background-size: 50%;
       background-position: center right;
+
       &-left {
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             margin-top: 30px;
             margin-bottom: 24px;
             width: 440px;
@@ -1595,24 +1521,15 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-bottom: 40px;
             width: 421px;
           }
         }
 
         &_btn {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
+          @include font-small;
           font-weight: 600;
-          line-height: 19px;
-          letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -1633,12 +1550,13 @@ input::placeholder {
 
       &-row {
         display: flex;
-        justify-content: space-around;
+        margin: auto;
       }
     }
   }
 
   .SecondaryCard {
+    margin: 12px;
     padding: 24px;
     border: 1px dashed rgba(226, 230, 230, 1);
     border-radius: 12px;
@@ -1655,7 +1573,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 31px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-top: 24px;
         margin-bottom: 12px;
         width: 80%;
@@ -1667,7 +1584,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
         width: 100%;
       }
     }
@@ -1686,15 +1602,11 @@ input::placeholder {
       background-size: 50%;
       padding-bottom: 95px;
       margin-bottom: 90px;
+
       &-left {
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 428px;
 
@@ -1704,12 +1616,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-top: 24px;
             margin-bottom: 40px;
             width: 421px;
@@ -1722,7 +1629,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           border: none;
           border-radius: 26px;
           color: rgba(4, 4, 4, 1);
@@ -1740,7 +1646,7 @@ input::placeholder {
     &-cards {
       &-row {
         display: flex;
-        justify-content: space-between;
+        margin: auto;
       }
     }
   }
@@ -1752,6 +1658,7 @@ input::placeholder {
     border: 1px dashed rgba(226, 230, 230, 1);
     border-radius: 12px;
     height: 282px;
+    margin: 12px;
     margin-bottom: 50px;
 
     &_title {
@@ -1760,7 +1667,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.01em;
-      text-align: left;
       padding-top: 16px;
       padding-bottom: 12px;
       width: 211px;
@@ -1772,7 +1678,6 @@ input::placeholder {
       font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.01em;
-      text-align: left;
 
       width: 222px;
     }
@@ -1789,6 +1694,9 @@ input::placeholder {
     border-bottom: 1px dashed rgba(226, 230, 230, 1);
     width: 70%;
     margin: auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 75px;
 
     &_title {
       width: 254px;
@@ -1797,7 +1705,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 32px;
       letter-spacing: -0.02em;
-      text-align: left;
       margin-left: 15%;
       margin-top: 60px;
       margin-bottom: 40px;
@@ -1810,11 +1717,10 @@ input::placeholder {
 
       &_questions {
         font-family: 'Atyp Display';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
-        line-height: 26px;
+        line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
       }
 
       button {
@@ -1823,16 +1729,25 @@ input::placeholder {
       }
     }
 
-    &_answer {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 90%;
-      margin-top: 8px;
+    &-answer {
+      padding: 10px;
+      background-color: #fff;
+
+      &_answer {
+        display: none;
+        @include font-small;
+        width: 90%;
+        margin-top: 8px;
+      }
     }
+  }
+
+  .collapse.open {
+    max-height: 500px;
+  }
+
+  .collapse.open .collapse-answer_answer {
+    display: block;
   }
 
   .footer {
@@ -1880,7 +1795,6 @@ input::placeholder {
           font-weight: 400;
           line-height: 18px;
           letter-spacing: 0.01em;
-          text-align: left;
           text-decoration: none;
           color: rgba(86, 89, 89, 1);
           transition: 1s;
@@ -1920,7 +1834,7 @@ input::placeholder {
     justify-content: space-between;
     align-items: center;
     align-self: center;
-    padding: 20px 7% 28px;
+    padding: 20px 10% 28px;
 
     &-menu {
       width: 257px;
@@ -1934,11 +1848,8 @@ input::placeholder {
         list-style: none;
 
         a {
+          @include font-small;
           text-decoration: none;
-          font-family: 'Neue Montreal';
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 22px;
           color: rgba(4, 4, 4, 1);
         }
       }
@@ -1971,23 +1882,17 @@ input::placeholder {
 
   .sec1 {
     display: flex;
-    margin: 0 7% 100px;
+    margin: 120px 10% 100px;
     background-image: url(./assets/header-bg.png);
     background-repeat: no-repeat;
     background-position: center right;
-    background-size: 60%;
+    background-size: 50%;
 
     &-left {
-      padding-top: 100px;
 
       &_title {
         width: 50%;
-        font-family: "Atyp Display";
-        font-size: 64px;
-        font-weight: 600;
-        line-height: 64px;
-        letter-spacing: -0.02em;
-        text-align: left;
+        @include font-big;
         color: rgba(4, 4, 4, 1);
         margin-bottom: 80px;
         margin-top: 30px;
@@ -2004,7 +1909,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 25px;
         letter-spacing: 0em;
-        text-align: left;
       }
 
       &_text {
@@ -2013,7 +1917,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
       }
 
       &_btn {
@@ -2033,7 +1936,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           margin-right: 10px;
           transition: 0.4s;
         }
@@ -2058,9 +1960,10 @@ input::placeholder {
     background-color: rgba(50, 204, 204, 0.1);
     background-image: url(./assets/secondary-mainbg.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top right;
+    background-size: 40%;
     background-position-x: 90%;
-    padding: 0 7%;
+    padding-left: 10%;
 
     &-main {
       padding-top: 100px;
@@ -2077,7 +1980,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 52px;
             letter-spacing: -0.02em;
-            text-align: left;
             margin-bottom: 32px;
             width: 60%;
 
@@ -2092,7 +1994,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 26px;
             letter-spacing: 0em;
-            text-align: left;
             width: 629px;
           }
         }
@@ -2103,7 +2004,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -2121,12 +2021,13 @@ input::placeholder {
 
   .sec2 {
     background: linear-gradient(180deg, #32CCCC 14.06%, rgba(50, 204, 204, 0) 79.69%);
-    padding: 100px 7% 0;
+    padding: 100px 10% 0;
     margin-bottom: 100px;
 
     &-main {
       background-image: url(./assets/sec2-mainbg.png);
       background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center right;
       display: flex;
       padding-bottom: 96px;
@@ -2135,12 +2036,7 @@ input::placeholder {
 
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 440px;
 
@@ -2150,12 +2046,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             width: 421px;
             margin-top: 24px;
             margin-bottom: 40px;
@@ -2172,7 +2063,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           transition: 0.4s;
         }
 
@@ -2215,42 +2105,31 @@ input::placeholder {
       font-weight: 600;
       line-height: 31px;
       letter-spacing: 0.01em;
-      text-align: left;
-      width: 206px;
+      width: 80%;
       margin-top: 16px;
       margin-bottom: 12px;
     }
 
     &_subtitle {
-      font-family: Neue Montreal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 352px;
+      @include font-small;
+      width: 95%;
     }
   }
 
   .sec3 {
-    margin-left: 7%;
-    margin-right: 7%;
-    margin-bottom: 100px;
+    margin: 0 10% 100px;
+    padding-top: 100px;
 
     &-main {
       background-image: url(./assets//sec3-mainbg.png);
       background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center right;
 
       &-left {
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             margin-top: 30px;
             margin-bottom: 24px;
             width: 440px;
@@ -2261,12 +2140,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-bottom: 40px;
             width: 421px;
           }
@@ -2278,7 +2152,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -2299,7 +2172,6 @@ input::placeholder {
 
       &-row {
         display: flex;
-        justify-content: space-between;
       }
     }
   }
@@ -2308,6 +2180,12 @@ input::placeholder {
     padding: 24px;
     border: 1px dashed rgba(226, 230, 230, 1);
     border-radius: 12px;
+    margin: 12px;
+    width: 32%;
+
+    &_bg {
+      width: 100%;
+    }
 
     &_text {
       &__title {
@@ -2316,32 +2194,27 @@ input::placeholder {
         font-weight: 600;
         line-height: 31px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-top: 24px;
         margin-bottom: 12px;
-        width: 241px;
+        width: 90%;
       }
 
       &__subtitle {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0.01em;
-        text-align: left;
-        width: 352px;
+        @include font-small;
+        width: 100%;
       }
     }
   }
 
   .sec4 {
-    padding: 100px 7% 0;
+    padding: 100px 10% 0;
     background-image: url(./assets/sec4-mainbg.png);
     background-repeat: no-repeat;
     background-size: cover;
 
     &-main {
       background-image: url(./assets/sec4-seconbg.png);
+      background-size: 50%;
       background-repeat: no-repeat;
       background-position: top right;
       padding-bottom: 185px;
@@ -2350,12 +2223,7 @@ input::placeholder {
 
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 428px;
 
@@ -2365,12 +2233,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-top: 24px;
             margin-bottom: 40px;
             width: 421px;
@@ -2383,7 +2246,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           border: none;
           border-radius: 26px;
           color: rgba(4, 4, 4, 1);
@@ -2401,8 +2263,6 @@ input::placeholder {
     &-cards {
       &-row {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
       }
     }
   }
@@ -2414,6 +2274,7 @@ input::placeholder {
     border: 1px dashed rgba(226, 230, 230, 1);
     border-radius: 12px;
     height: 282px;
+    margin: 12px;
     margin-bottom: 100px;
 
     &_title {
@@ -2422,26 +2283,20 @@ input::placeholder {
       font-weight: 600;
       line-height: 31px;
       letter-spacing: 0.01em;
-      text-align: left;
       padding-top: 16px;
       padding-bottom: 12px;
-      width: 211px;
+      width: 90%;
     }
 
     &_subtitle {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 352px;
+      @include font-small;
+      width: 100%;
     }
 
     &_image {
       position: relative;
-      top: -100%;
-      left: 61%;
+      top: -85%;
+      left: 57%;
     }
   }
 
@@ -2450,6 +2305,9 @@ input::placeholder {
     border-bottom: 1px dashed rgba(226, 230, 230, 1);
     width: 50%;
     margin: auto;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    max-height: 55px;
 
     &_title {
       width: 380px;
@@ -2458,7 +2316,6 @@ input::placeholder {
       font-weight: 600;
       line-height: 48px;
       letter-spacing: -0.02em;
-      text-align: left;
       margin-left: 25%;
       margin-top: 160px;
       margin-bottom: 40px;
@@ -2475,7 +2332,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 26px;
         letter-spacing: 0.01em;
-        text-align: left;
       }
 
       button {
@@ -2484,16 +2340,20 @@ input::placeholder {
       }
     }
 
-    &_answer {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 559px;
-      margin-top: 8px;
+    &-answer {
+      padding: 10px;
+      background-color: #fff;
+
+      &_answer {
+        @include font-small;
+        width: 559px;
+        margin-top: 8px;
+      }
     }
+  }
+
+  .collapse.open {
+    max-height: 500px;
   }
 
   .footer {
@@ -2504,11 +2364,7 @@ input::placeholder {
     margin-top: 100px;
 
     h1 {
-      font-family: 'Atyp Display';
-      font-size: 64px;
-      font-weight: 600;
-      line-height: 64px;
-      letter-spacing: -0.02em;
+      @include font-big;
       text-align: center;
       width: 353px;
       margin: auto;
@@ -2545,7 +2401,6 @@ input::placeholder {
           font-weight: 400;
           line-height: 18px;
           letter-spacing: 0.01em;
-          text-align: left;
           text-decoration: none;
           color: rgba(86, 89, 89, 1);
           transition: 1s;
@@ -2601,17 +2456,12 @@ input::placeholder {
           font-weight: 600;
           line-height: 36px;
           letter-spacing: -0.02em;
-          text-align: left;
           margin-top: 64px;
           width: 272px;
         }
 
         &_sub {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 22px;
-          letter-spacing: 0.01em;
+          @include font-small;
           text-align: center;
           width: 352px;
           margin-top: 16px;
@@ -2651,7 +2501,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 22px;
           letter-spacing: 0.01em;
-          text-align: left;
           border: none;
           background: rgba(50, 204, 204, 1);
           border-radius: 24px;
@@ -2712,7 +2561,7 @@ input::placeholder {
     justify-content: space-between;
     align-items: center;
     align-self: center;
-    padding: 20px 15% 28px;
+    padding: 20px 20% 28px;
 
     &-menu {
       width: 257px;
@@ -2765,21 +2614,15 @@ input::placeholder {
     display: flex;
     background-image: url(./assets/header-bg.png);
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 70%;
     background-position: center right;
-    margin: 0 15% 120px;
+    margin: 100px 20% 120px;
 
     &-left {
-      padding-top: 150px;
 
       &_title {
         width: 490px;
-        font-family: "Atyp Display";
-        font-size: 64px;
-        font-weight: 600;
-        line-height: 64px;
-        letter-spacing: -0.02em;
-        text-align: left;
+        @include font-big;
         color: rgba(4, 4, 4, 1);
         margin-bottom: 100px;
         margin-top: 30px;
@@ -2796,7 +2639,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 25px;
         letter-spacing: 0em;
-        text-align: left;
       }
 
       &_text {
@@ -2805,8 +2647,6 @@ input::placeholder {
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0.01em;
-        text-align: left;
-
       }
 
       &_btn {
@@ -2826,7 +2666,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           margin-right: 10px;
           transition: 0.4s;
         }
@@ -2866,14 +2705,15 @@ input::placeholder {
   .secondary {
     display: flex;
     background-color: rgba(50, 204, 204, 0.1);
-    padding-right: 5%;
-    padding-left: 15%;
+    padding-right: 10%;
+    padding-left: 20%;
 
     &-main {
       padding-top: 100px;
       padding-bottom: 160px;
       background-image: url(./assets/secondary-mainbg.png);
       background-repeat: no-repeat;
+      background-size: 50%;
       background-position: center right;
       width: 100%;
 
@@ -2889,7 +2729,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 52px;
             letter-spacing: -0.02em;
-            text-align: left;
             margin-bottom: 32px;
             width: 820px;
 
@@ -2904,7 +2743,6 @@ input::placeholder {
             font-weight: 600;
             line-height: 26px;
             letter-spacing: 0em;
-            text-align: left;
             width: 629px;
           }
         }
@@ -2915,7 +2753,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -2932,25 +2769,22 @@ input::placeholder {
   }
 
   .sec2 {
-    background: linear-gradient(180deg, #32CCCC 14.06%, rgba(50, 204, 204, 0) 79.69%);
-    padding: 100px 15%;
+    background: linear-gradient(180deg, #32CCCC 40%, rgba(50, 204, 204, 0) 79.69%);
+    padding: 100px 20%;
 
     &-main {
       display: flex;
       background-image: url(./assets/sec2-mainbg.png);
       background-repeat: no-repeat;
+      background-size: contain;
       background-position: center right;
+      margin-bottom: 100px;
 
       &-left {
 
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 440px;
 
@@ -2960,12 +2794,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             width: 421px;
             margin-top: 24px;
             margin-bottom: 40px;
@@ -2982,7 +2811,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           transition: 0.4s;
           margin-bottom: 95px;
         }
@@ -2997,15 +2825,11 @@ input::placeholder {
         margin-top: 100px;
       }
 
-      margin-bottom: 100px;
     }
 
     &-cards {
       display: flex;
-      justify-content: space-between;
     }
-
-    margin-bottom: 100px;
   }
 
   .card {
@@ -3033,40 +2857,31 @@ input::placeholder {
       font-weight: 600;
       line-height: 31px;
       letter-spacing: 0.01em;
-      text-align: left;
       width: 100%;
       margin-top: 16px;
       margin-bottom: 12px;
     }
 
     &_subtitle {
-      font-family: Neue Montreal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
+      @include font-small;
       width: 100%;
     }
   }
 
   .sec3 {
-    margin: 100px 15% 100px;
+    margin: 0 20% 100px;
+    padding-top: 100px;
 
     &-main {
-      background-image: url(./assets//sec3-mainbg.png);
+      background-image: url(./assets/sec3-mainbg.png);
       background-repeat: no-repeat;
+      background-size: contain;
       background-position: center right;
 
       &-left {
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             margin-top: 30px;
             margin-bottom: 24px;
             width: 440px;
@@ -3077,12 +2892,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-bottom: 40px;
             width: 421px;
           }
@@ -3094,7 +2904,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           padding: 16.5px 32px;
           border: none;
           border-radius: 26px;
@@ -3138,26 +2947,20 @@ input::placeholder {
         font-weight: 600;
         line-height: 31px;
         letter-spacing: 0.01em;
-        text-align: left;
         margin-top: 24px;
         margin-bottom: 12px;
         width: 90%;
       }
 
       &__subtitle {
-        font-family: 'Neue Montreal';
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0.01em;
-        text-align: left;
+        @include font-small;
         width: 95%;
       }
     }
   }
 
   .sec4 {
-    padding: 0 15%;
+    padding: 0 20%;
     background-image: url(./assets/sec4-mainbg.png);
     background-repeat: no-repeat;
     width: 100%;
@@ -3168,6 +2971,7 @@ input::placeholder {
       display: flex;
       background-image: url(./assets/sec4-seconbg.png);
       background-repeat: no-repeat;
+      background-size: contain;
       background-position: center right;
       margin-bottom: 100px;
       padding-bottom: 95px;
@@ -3176,12 +2980,7 @@ input::placeholder {
 
         &_text {
           &__title {
-            font-family: 'Atyp Display';
-            font-size: 64px;
-            font-weight: 600;
-            line-height: 64px;
-            letter-spacing: -0.02em;
-            text-align: left;
+            @include font-big;
             color: rgba(4, 4, 4, 1);
             width: 428px;
 
@@ -3191,12 +2990,7 @@ input::placeholder {
           }
 
           &__subtitle {
-            font-family: 'Neue Montreal';
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 0px;
-            text-align: left;
+            @include font-small;
             margin-top: 24px;
             margin-bottom: 40px;
             width: 421px;
@@ -3209,7 +3003,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 19px;
           letter-spacing: 0em;
-          text-align: left;
           border: none;
           border-radius: 26px;
           color: rgba(4, 4, 4, 1);
@@ -3245,7 +3038,7 @@ input::placeholder {
     width: 32%;
     border: 1px dashed rgba(226, 230, 230, 1);
     border-radius: 12px;
-    height: 282px;
+    height: 329px;
     margin-bottom: 100px;
     margin-right: 12px;
     margin-left: 12px;
@@ -3256,19 +3049,13 @@ input::placeholder {
       font-weight: 600;
       line-height: 31px;
       letter-spacing: 0.01em;
-      text-align: left;
       padding-top: 28px;
       padding-bottom: 20px;
       width: 80%;
     }
 
     &_subtitle {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
+      @include font-small;
       width: 100%;
     }
 
@@ -3299,8 +3086,11 @@ input::placeholder {
   .collapse {
     padding: 16px;
     border-bottom: 1px dashed rgba(226, 230, 230, 1);
-    width: 50%;
+    width: 40%;
     margin: auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 55px;
 
     &_title {
       width: 380px;
@@ -3309,8 +3099,7 @@ input::placeholder {
       font-weight: 600;
       line-height: 48px;
       letter-spacing: -0.02em;
-      text-align: left;
-      margin-left: 25%;
+      margin-left: 31%;
       margin-top: 160px;
       margin-bottom: 40px;
     }
@@ -3319,6 +3108,7 @@ input::placeholder {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: pointer;
 
       &_questions {
         font-family: 'Atyp Display';
@@ -3326,7 +3116,6 @@ input::placeholder {
         font-weight: 600;
         line-height: 26px;
         letter-spacing: 0.01em;
-        text-align: left;
       }
 
       button {
@@ -3335,16 +3124,21 @@ input::placeholder {
       }
     }
 
-    &_answer {
-      font-family: 'Neue Montreal';
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0.01em;
-      text-align: left;
-      width: 100%;
-      margin-top: 8px;
+    &-answer {
+      padding: 10px;
+      background-color: #fff;
+
+      &_answer {
+        @include font-small;
+        width: 100%;
+        margin-top: 8px;
+      }
     }
+
+  }
+
+  .collapse.open {
+    max-height: 500px;
   }
 
   .footer {
@@ -3355,11 +3149,7 @@ input::placeholder {
     margin-top: 100px;
 
     h1 {
-      font-family: 'Atyp Display';
-      font-size: 64px;
-      font-weight: 600;
-      line-height: 64px;
-      letter-spacing: -0.02em;
+      @include font-big;
       text-align: center;
       width: 353px;
       margin: auto;
@@ -3379,7 +3169,7 @@ input::placeholder {
   .bottom {
     display: flex;
     justify-content: space-between;
-    margin: 40px 10%;
+    margin: 40px 20%;
 
     &-menu {
       display: flex;
@@ -3396,7 +3186,6 @@ input::placeholder {
           font-weight: 400;
           line-height: 18px;
           letter-spacing: 0.01em;
-          text-align: left;
           text-decoration: none;
           color: rgba(86, 89, 89, 1);
           transition: 1s;
@@ -3452,17 +3241,12 @@ input::placeholder {
           font-weight: 600;
           line-height: 36px;
           letter-spacing: -0.02em;
-          text-align: left;
           margin-top: 64px;
           width: 272px;
         }
 
         &_sub {
-          font-family: 'Neue Montreal';
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 22px;
-          letter-spacing: 0.01em;
+          @include font-small;
           text-align: center;
           width: 352px;
           margin-top: 16px;
@@ -3502,7 +3286,6 @@ input::placeholder {
           font-weight: 600;
           line-height: 22px;
           letter-spacing: 0.01em;
-          text-align: left;
           border: none;
           background: rgba(50, 204, 204, 1);
           border-radius: 24px;

@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import App from '../App';
-import logo from '../assets/Logo.png'
-import menubtn from '../assets/menu-btn.png'
+import { Link } from 'react-router-dom';
+import logo from '../assets/Logo.svg'
+import menubtn from '../assets/menu-btn.svg'
 import MenuButton from './MenuButton';
 import RegistrationModal from './LoginModal'
-const Header = () => {
-
+const Header = ({ scrollToSection }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalOpenlogin, setIsModalOpenlogin] = useState(false);
 
@@ -24,32 +22,24 @@ const Header = () => {
     const closeModallogin = () => {
         setIsModalOpenlogin(false);
     };
+
     return (
         <div className='header'>
-            <Router>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'center' }}>
-                    <Link to="/"><img src={logo} alt="logo" /></Link>
-                    <ul className='header-menu'>
-                        <li className='header-menu_li'><Link to="/pay">Pay</Link></li>
-                        <li className='header-menu_li'><Link to="/send">Send</Link></li>
-                        <li className='header-menu_li'><Link to="/monitor">Monitor</Link></li>
-                        <li className='header-menu_li'><Link to="/about">About</Link></li>
-                    </ul>
-                </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'center' }}>
+                <Link to="/"><img onDragStart={(e) => e.preventDefault()} src={logo} alt="logo" /></Link>
+                <ul className='header-menu'>
+                    <li className='header-menu_li'><Link to="/about" onClick={() => scrollToSection('section2')}>About</Link></li>
+                    <li className='header-menu_li'><Link to="/monitor" onClick={() => scrollToSection('section3')}>Monitor</Link></li>
+                    <li className='header-menu_li'><Link to="/myhome" onClick={() => scrollToSection('section4')}>My Home</Link></li>
+                    <li className='header-menu_li'><Link to="/faq" onClick={() => scrollToSection('faq')}>FAQ</Link></li>
+                </ul>
+            </div>
 
-                <button onClick={openModallogin} className='header-login_btn'><Link to="/login">Log in</Link></button>
-                <RegistrationModal isOpen={isModalOpenlogin} onClose={closeModallogin} />
-                <button onClick={openModal} style={{ background: 'none', border: 'none' }} className="header-menu_btn"><img src={menubtn} alt="" /></button>
-                <MenuButton isOpen={isModalOpen} onClose={closeModal} />
+            <button onClick={openModallogin} className='header-login_btn'><Link to="/login">Log in</Link></button>
+            <RegistrationModal isOpen={isModalOpenlogin} onClose={closeModallogin} />
 
-                <Routes>
-                    <Route exact path="/" component={<App />} />
-                    <Route exact path="/pay" component={<App />} />
-                    <Route exact path="/send" component={<App />} />
-                    <Route exact path="/monitor" component={<App />} />
-                    <Route exact path="/About" component={<App />} />
-                </Routes>
-            </Router>
+            <button onClick={openModal} style={{ background: 'none', border: 'none' }} className="header-menu_btn"><img onDragStart={(e) => e.preventDefault()} src={menubtn} alt="" /></button>
+            <MenuButton scrollToSection={scrollToSection} isOpen={isModalOpen} onClose={closeModal} />
         </div>
     )
 }
